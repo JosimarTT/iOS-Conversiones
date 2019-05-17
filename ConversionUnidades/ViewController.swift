@@ -21,10 +21,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         let tarea = tareas[indexPath.row]
         cell.textLabel?.text = tarea.nombre
-        if tarea.final < 13.0 {
-            cell.backgroundColor = UIColor.red
-        } else {
+        if tarea.unidadFinal == "m" {
+            cell.backgroundColor = UIColor.yellow
+        } else if tarea.unidadFinal == "Km" {
             cell.backgroundColor = UIColor.green
+        } else {
+            cell.backgroundColor = UIColor.orange
         }
     }
     
